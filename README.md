@@ -1,34 +1,84 @@
-# PyTorch Template Project
+## Visual Place Recognition 
+
+- Selection Keys: Dataset, dimension, locations
+
+## PyTorch Template Project
+
+
+**Nanne's NetVLAD pytorch**
+```py
+python main.py --mode=train --arch=vgg16 --pooling=netvlad --num_clusters=64
+```
+
+**Patch-NetVLAD**
+```py
+python train.py \
+--config_path patchnetvlad/configs/train.ini \
+--cache_path=/mnt/ssd/usman_ws/datasets/patch_netvlad_cache/cache \
+--save_path=/mnt/ssd/usman_ws/datasets/patch_netvlad_cache/save_path \
+--dataset_root_dir=/media/leo/2C737A9872F69ECF/datasets/mapillary/
+```
+
+This Template
+
+      `python train.py -c config.json`
+
+      Modify the configurations in `.json` config files, then run:
+
+      `python train.py --config config.json`
+
+      Resuming from checkpoints
+      You can resume from a previously saved checkpoint by:
+
+        `python train.py --resume path/to/checkpoint`
+
+      Using Multiple GPU
+      You can enable multi-GPU training by setting `n_gpu` argument of the config file to larger number.
+      If configured to use smaller number of gpu than available, first n devices will be used by default.
+      Specify indices of available GPUs by cuda environmental variable.
+        ```
+        python train.py --device 2,3 -c config.json
+        ```
+        This is equivalent to
+        ```
+        CUDA_VISIBLE_DEVICES=2,3 python train.py -c config.py
+        ```
+
+
+
 PyTorch deep learning project made easy.
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-* [PyTorch Template Project](#pytorch-template-project)
-	* [Requirements](#requirements)
-	* [Features](#features)
-	* [Folder Structure](#folder-structure)
-	* [Usage](#usage)
-		* [Config file format](#config-file-format)
-		* [Using config files](#using-config-files)
-		* [Resuming from checkpoints](#resuming-from-checkpoints)
-    * [Using Multiple GPU](#using-multiple-gpu)
-	* [Customization](#customization)
-		* [Custom CLI options](#custom-cli-options)
-		* [Data Loader](#data-loader)
-		* [Trainer](#trainer)
-		* [Model](#model)
-		* [Loss](#loss)
-		* [metrics](#metrics)
-		* [Additional logging](#additional-logging)
-		* [Validation data](#validation-data)
-		* [Checkpoints](#checkpoints)
-    * [Tensorboard Visualization](#tensorboard-visualization)
-	* [Contribution](#contribution)
-	* [TODOs](#todos)
-	* [License](#license)
-	* [Acknowledgements](#acknowledgements)
+- [Visual Place Recognition](#visual-place-recognition)
+- [PyTorch Template Project](#pytorch-template-project)
+- [Requirements](#requirements)
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Usage](#usage)
+  - [Config file format](#config-file-format)
+  - [Using config files](#using-config-files)
+  - [Resuming from checkpoints](#resuming-from-checkpoints)
+  - [Using Multiple GPU](#using-multiple-gpu)
+- [Customization](#customization)
+  - [Project initialization](#project-initialization)
+  - [Custom CLI options](#custom-cli-options)
+  - [Data Loader](#data-loader)
+  - [Trainer](#trainer)
+  - [Model](#model)
+  - [Loss](#loss)
+  - [Metrics](#metrics)
+  - [Additional logging](#additional-logging)
+  - [Testing](#testing)
+  - [Validation data](#validation-data)
+  - [Checkpoints](#checkpoints)
+  - [Tensorboard Visualization](#tensorboard-visualization)
+- [Contribution](#contribution)
+- [TODOs](#todos)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 <!-- /code_chunk_output -->
 
