@@ -1,9 +1,13 @@
 ## Visual Place Recognition 
 
 - Selection Keys: Dataset, dimension, locations
-
+- Study dataloaders of both Copy dataloaders 
+- Seqnet has mappilary and nordland and oxford dataloaders created
+-[X] MAke clear config data to empty
 ## PyTorch Template Project
 
+
+python train.py --arch=vgg16 --pooling=netvlad --num_clusters=64
 
 **Nanne's NetVLAD pytorch**
 ```py
