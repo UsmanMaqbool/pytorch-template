@@ -3,8 +3,11 @@
     "n_gpu": 1,
 
     "arch": {
-        "type": "MnistModel",
-        "args": {}
+        "type": "vgg16",
+        "args": {
+            "pooling": "netvlad",
+            "num_clusters": 64
+        }
     },
     "data_loader": {
         "type": "MnistDataLoader",
